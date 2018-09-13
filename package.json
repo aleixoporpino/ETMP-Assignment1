@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/mob-appl-develop-cent/ETMP-Assignment1/issues"
   },
-  "homepage": "https://github.com/mob-appl-develop-cent/ETMP-Assignment1#readme"
+  "homepage": "https://github.com/mob-appl-develop-cent/ETMP-Assignment1#readme",
+  "dependencies": {
+    "seneca": "^3.7.0"
+  }
 }
