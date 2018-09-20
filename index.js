@@ -1,4 +1,4 @@
-var app = require('./config/express-handler')();
+const app = require('./config/express-handler')();
 
 app.listen(3000, function () {
     console.log("Server is listening at http://127.0.0.1:3000/");

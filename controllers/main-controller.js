@@ -10,6 +10,9 @@ module.exports = function (app) {
     app.post("/sendPost", function (req, res) {
         postCounter++;
         showRequestCount();
+
+        console.log(req.body);
+
         res.send('sendPost is working');
     });
 };
