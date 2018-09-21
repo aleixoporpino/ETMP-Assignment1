@@ -1,6 +1,6 @@
 const app = require('./config/express-handler')();
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 5000, function () {
     console.log("Server is listening at http://127.0.0.1:3000/");
     console.log("Endpoins:");
     console.log("http://127.0.0.1:3000/sendGet method: GET");
