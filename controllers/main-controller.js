@@ -3,7 +3,7 @@ var getCounter = 0;
 var postCounter = 0;
 var deleteCounter = 0;
 module.exports = function (app) {
-    app.get("/sendGet", function (req, res) {
+    app.get("/products", function (req, res) {
         getCounter++;
         showRequestCount();
         productsSave.find({}, function (error, products) {
@@ -11,7 +11,7 @@ module.exports = function (app) {
         });
     });
 
-    app.post("/sendPost", function (req, res) {
+    app.post("/products/new", function (req, res) {
         postCounter++;
         showRequestCount();
 
@@ -25,7 +25,7 @@ module.exports = function (app) {
     });
 
     // Delete all the products
-    app.del('/sendDelete', function (req, res, next) {
+    app.del('/products/deleteAll', function (req, res, next) {
         deleteCounter++;
         showRequestCount();
         productsSave.deleteMany({},function (error) {
