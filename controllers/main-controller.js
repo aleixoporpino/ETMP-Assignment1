@@ -20,7 +20,7 @@ module.exports = function (app) {
         //Get all the objects saved before.
         productsSave.find({}, function (error, products) {
             console.log("Send response <<<");
-            res.send(products)
+            res.status(200).send(products);
         });
     });
 
@@ -35,12 +35,12 @@ module.exports = function (app) {
         var newProduct = req.body;
         productsSave.create( newProduct, function (error, product) {
             console.log("Send response <<< " + product);
-            res.send(201, product)
+            res.status(201).send(product);
         });
     });
 
     // Delete all the products
-    app.del('/products/deleteAll', function (req, res) {
+    app.delete('/products/deleteAll', function (req, res) {
         console.log("Send request >>>");
         // Increment delete counter and show the counter
         deleteCounter++;
@@ -49,7 +49,7 @@ module.exports = function (app) {
         // delete all the records and send the response.
         productsSave.deleteMany({},function (error) {
             console.log("Send response <<< All products were deleted");
-            res.send(200, "All products were deleted.");
+            res.status(200).send("All products were deleted.");
         });
     });
 };
